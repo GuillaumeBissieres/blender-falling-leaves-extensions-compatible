@@ -1,0 +1,18 @@
+schema_version = "1.0.0"
+id = "falling_leaves_online_assets"
+version = "1.0.0"
+name = "Falling Leaves - Online Assets"
+tagline = "Download extra leaf assets for the Falling Leaves extension"
+maintainer = "Guillaume Bissieres"
+type = "add-on"
+website = "https://github.com/GuillaumeBissieres/blender-falling-leaves-extensions-compatible"
+tracker_url = "https://github.com/GuillaumeBissieres/blender-falling-leaves-extensions-compatible/issues"
+tags = ["Animation", "Object"]
+blender_version_min = "4.2.0"
+license = [
+  "SPDX:GPL-3.0-or-later",
+]
+
+[permissions]
+network = "Download the optional leaf asset packs from Hugging Face"
+files = "Save the downloaded assets in the Falling Leaves user folder"
