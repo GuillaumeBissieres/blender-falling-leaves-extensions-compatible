@@ -63,7 +63,7 @@ This add-on builds a complete falling-leaves scene in one click: an emitter, a l
 
 New leaf assets are added over time: click **Update Online Assets** whenever you like, only new or changed files are downloaded.
 
-> **Important:** Due to Blender Extensions rules (extensions must be self-contained and cannot download content), **Falling Leaves** and **Falling Leaves - Online Assets** must be installed separately. For full functionality, install **Falling Leaves** first, then install **Falling Leaves - Online Assets** and download the assets.
+> **Important:** The Blender Extensions package of **Falling Leaves** contains the Falling Leaves tools with 3 bundled leaf assets only, and never connects to the internet. The complete asset library is distributed separately through **Falling Leaves - Online Assets**, so the two add-ons must be installed one after the other. For full functionality, install **Falling Leaves** first, then install **Falling Leaves - Online Assets** and download the assets.
 
 ## Accessing the Add-ons
 
@@ -74,7 +74,8 @@ New leaf assets are added over time: click **Update Online Assets** whenever you
 
 1. **Run Falling Leaves** : Creates an Emitter plane above the scene, a Leaf object, a Ground plane with Collision and a particle system (500 leaves by default) with Newtonian physics, Brownian motion, drag, damping and random rotation. Press play and the leaves fall.
 
-2. **Delete Setup** : The trash icon next to the Run button removes the Emitter, Leaf and Ground objects in one click.
+2. **Hide / Show Leaves** : The eye icon next to the Run button hides or shows the falling leaves (viewport and render). The Leaf Path leaves are not affected.
+3. **Delete Setup** : The trash icon next to the Run button removes the Emitter, Leaf and Ground objects in one click.
 
 ###
 
@@ -90,18 +91,14 @@ New leaf assets are added over time: click **Update Online Assets** whenever you
 
 # How to Use — Leaf Mesh
 
-1. **Import Leaf from Image** : Select a PNG or JPG with transparency. The add-on reads the alpha channel to extract the leaf silhouette, then builds a leaf mesh with UV mapping and a material. Adjust **Subdivisions** and **Displacement** in the Adjust Last Operation panel for a more organic shape.
+1. **Import Leaf from Image** : Select a PNG or JPG with transparency. The add-on reads the alpha channel to extract the leaf silhouette, then builds a leaf mesh with UV mapping and a material. Each import creates its own collection; the trash icon next to the button deletes it. Adjust **Subdivisions** and **Displacement** in the Adjust Last Operation panel for a more organic shape.
 
 2. **Replace Leaf Mesh** : Select any object in the scene and click this button to use it as the instanced leaf of the particle system. The current leaf object is displayed in the panel.
-
-###
-
-###
 
 
 # How to Use — Asset Panel
 
-Click an icon in the grid, then **Add to Scene** to append the matching ready-made leaf asset into your scene. **Capture Thumbnail** takes the thumbnail from the viewport and **Save Selection to Library** stores your own assets.
+Click an icon in the grid, then **Add to Scene** to append the matching ready-made leaf asset into your scene. A pop-up asks if you want to use the current leaf collection in the asset's **Collection Info** node. The trash icon next to **Add to Scene** removes the active asset from the scene. **Capture Thumbnail** takes the thumbnail from the viewport and **Save Selection to Library** stores your own assets.
 
 Below, the **Online assets** section shows how many asset packs are downloaded and the **Download / Update Online Assets** button. This section only appears once the Online Assets add-on is installed and enabled.
 
@@ -120,6 +117,7 @@ Below, the **Online assets** section shows how many asset packs are downloaded a
 
 Fine-tune the particle system without leaving the N panel:
 
+- **Hide / Show Emitter & Ground** : Hides the emitter plane and the ground plane. The leaves keep falling.
 - **Particles** : Leaf Count, Lifetime, Start Frame, End Frame
 - **Size** : leaf size and size randomness
 - **Physics** : Mass, Brownian, Drag, Damping
@@ -143,8 +141,9 @@ Fine-tune the particle system without leaving the N panel:
 
 1. **Add Wind** : Adds a Wind force field with a ready-made preset and adjusts the particle settings to match, so leaves drift naturally.
 2. **Strength / Noise** : Two sliders control the wind directly from the panel.
-3. **Delete Wind** : The trash icon next to Add Wind removes the wind field in one click.
-4. **Bake Simulation** : Bakes the particle simulation for reliable playback and rendering.
+3. **Hide / Show Wind** : The eye icon hides or shows the Wind object. The wind keeps working.
+4. **Delete Wind** : The trash icon next to Add Wind removes the wind field in one click.
+5. **Bake Simulation** : Bakes the particle simulation for reliable playback and rendering.
 
 <img width="346" height="153" alt="Capture d&#39;écran 2026-10-28 224025" src="https://github.com/user-attachments/assets/37d0811f-6dd6-4390-b712-a349cf6bdc0b" />
 
@@ -159,16 +158,21 @@ Fine-tune the particle system without leaving the N panel:
 
 # How to Use — Leaf Path
 
-1. **Add Leaf Path** : Pick a curve of your scene in the **Leaf Path** panel. It becomes the path the leaves follow, like a stream of leaves carried by the wind. The trash icon removes it in one click.
-2. **Speed / Noise / Spin** : Control how fast the leaves travel along the curve, how wavy the flow is, and how fast they rotate on themselves.
-3. **Entry / Exit Diameter** : Set the width of the flow where the leaves enter and leave the path.
-4. **Disappear at Beginning / End of Path** : Choose whether the leaves are born exactly on the path (none visible before it starts) and whether they vanish when they reach the end of the curve.
+Make the leaves follow a curve, like a stream of leaves carried by the wind.
+
+1. **Draw Path** : Draw a free curve in the viewport, then click **Apply Path**.
+2. **Straight / Simple / Spiral** : Add a ready-made path in one click.
+3. **Use these settings on another curve** : Pick any curve of your scene and click **Apply** to make it the leaf path with the current settings.
+4. **Entry / Exit Diameter** : Set the width of the flow where the leaves enter and leave the path. A smaller exit narrows the flow, a larger one widens it.
+5. **Speed / Free** : How fast the leaves travel along the curve (in meters per second), and the part of their life spent free after the path.
+6. **Spin / Noise** : How fast the leaves rotate on themselves and how wavy the flow is.
+7. **Disappear at Beginning / End of Path** : Choose whether the leaves are born exactly on the path (none visible before it starts) and whether they vanish when they reach the end of the curve.
+8. **Hide / Delete** : The eye icon hides or shows the path, the trash icon removes it in one click.
 
 ###
 
 <img width="1894" height="998" alt="falling_leaves_16" src="https://github.com/user-attachments/assets/59523fec-d0b4-4b83-a69f-735827947c64" />
 
-###
 ###
 
 
@@ -176,7 +180,7 @@ Fine-tune the particle system without leaving the N panel:
 
 Blow the leaves lying on your Geometry Nodes ground, like a gust sweeping them away. It runs in real time: just play the timeline.
 
-1. **Add Ground Wind** : In **Wind & Forces** > **Ground Wind**, pick your **Ground** object and click the button. A **GroundWind** empty is created with a default sweep across the ground. Move or keyframe it to steer the gust.
+1. **Add Real-time Ground Wind** : In **Wind & Forces** > **Ground Wind**, pick your **Ground** object and click the button. A **GroundWind** empty is created with a default sweep across the ground. Move or keyframe it to steer the gust.
 2. **Wind Strength / Wind Radius** : How hard the leaves are swept and the size of the zone affected around the wind.
 3. **Spread / Turbulence / Orientation** : How much the leaves are pushed apart from the center, how random the motion is, and how much the wind tilts and flips them.
 4. **Gravity / Friction** : How fast lifted leaves fall back, and how quickly they stop on the ground.
@@ -204,4 +208,8 @@ Blow the leaves lying on your Geometry Nodes ground, like a gust sweeping them a
 - **Background Download** : The assets download in a separate thread with a progress counter — Blender never freezes.
 - **Safe Download** : Files are written to a temporary `.part` file and size-checked before being validated, so an interrupted download never leaves a corrupted asset.
 - **Copy & Share Settings** : Particle and wind settings can be exported to the clipboard and applied in another scene.
-- **Non-destructive Cleanup** : Delete Setup and Delete Wind only remove the objects created by the add-on.
+- **Non-destructive Cleanup** : Delete Setup, Delete Wind, Delete Path and Delete Ground Wind only remove the objects created by the add-on.
+
+# License
+
+GNU General Public License v3.0 or later. See `LICENSE`.
