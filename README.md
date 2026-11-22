@@ -1,69 +1,78 @@
-# blender-falling-leaves-extensions-compatible
-
-This repository contains the Blender Extensions compatible version.  For the complete package including .... and all optional components, visit:  https://github.com/GuillaumeBissieres/blender-falling-leaves
+# blender-falling-leaves - extensions-compatible
+This repository contains the Blender Extensions compatible version.  For the complete package including all the online assets and optional components, visit:  https://github.com/GuillaumeBissieres/blender-falling-leaves
 
 An add-on to create and animate realistic falling leaves in Blender
 
 <img width="4167" height="2083" alt="Falling_img_01" src="https://github.com/user-attachments/assets/a8edc86e-fd5a-48e2-a229-2d541f34272f" />
 
-<!-- Add a banner screenshot here: drag & drop an image into the GitHub editor -->
+
 
 #
 
-**Falling Leaves**
+**Falling Leaves & Online Assets**
 
-This add-on builds a complete falling-leaves scene in one click: an emitter, a leaf mesh, a ground with collision and a fully configured particle system. You can then tune the simulation, swap in your own leaf, add wind and bake the result — all from within Blender's N panel.
+This add-on builds a complete falling-leaves scene in one click: an emitter, a leaf mesh, a ground with collision and a fully configured particle system. You can then tune the simulation, swap in your own leaf, add wind, guide the leaves along a curve, sweep them off the ground and bake the result — all from within Blender's N panel. The **Online Assets** add-on completes it with the full library of ready-made leaf assets, downloaded from Hugging Face and updated over time.
 
 ###
 
 <img width="1641" height="989" alt="Animation_6 (1)" src="https://github.com/user-attachments/assets/b897ac34-bc40-4709-8971-927c0f902ebc" />
 
-###
 
 # Requirements
 
-- **Blender 4.2 or newer**
-- **Asset pack** (about 127 MB): the ready-made leaf objects are hosted on Hugging Face and downloaded from the add-on preferences — no terminal needed. An internet connection is required for this one-time download.
-- **OpenCV** (`opencv-python-headless`): required only for **Import Leaf from Image**. Install it into Blender's Python, for example on Windows:
+**Falling Leaves** (Blender Extensions) is fully self-contained: OpenCV and 3 Geometry Nodes leaf assets are bundled, nothing else to install.
 
-```
-"C:\Program Files\Blender Foundation\Blender 5.0\5.0\python\bin\python.exe" -m pip install opencv-python-headless
-```
+**Falling Leaves - Online Assets** (this repository) downloads the extra leaf assets from the Hugging Face repository: [GBissieres/falling_leaves_assets](https://huggingface.co/datasets/GBissieres/falling_leaves_assets)
 
-Adjust the path to match your Blender version.
+**The assets can be downloaded directly from the add-on preferences** — no terminal or manual download needed. Go to **Edit** > **Preferences** > **Add-ons** > **Falling Leaves - Online Assets** and click **Download Online Assets**. The full asset pack is approximately 127 MB — a stable internet connection is required.
 
-The asset pack is hosted here: [GBissieres/falling_leaves_assets](https://huggingface.co/datasets/GBissieres/falling_leaves_assets)
+**Allow Online Access** must be enabled in **Edit** > **Preferences** > **System** > **Network**.
 
-<img width="647" height="365" alt="Capture d&#39;écran 2026-10-28 211633" src="https://github.com/user-attachments/assets/0aff4ee0-7d54-4293-a988-22ab17c3b1a6" />
 
 ###
 
-<!-- Screenshot: add-on preferences with the Download Asset Pack button -->
+<img width="641" height="420" alt="Capture d&#39;écran 2026-11-22 014845" src="https://github.com/user-attachments/assets/e7e5424d-abbe-4c88-93f6-78dc590c37e5" />
 
-# Installation
 
-Download the ZIP file.
 
-Open Blender and go to **Edit** > **Preferences** > **Get Extensions**.
+# Installation (Blender Extensions Version)
 
-Click the arrow in the top-right corner, choose **Install from Disk**, and select the ZIP file.
+## Step 1 – Install Falling Leaves
 
-Enable the add-on by checking the corresponding box.
+1. Download and install **Falling Leaves** from [Blender Extensions](https://extensions.blender.org/add-ons/falling-leaves/).
+2. Open Blender and go to **Edit > Preferences > Add-ons**.
+3. Enable the **Falling Leaves** add-on.
 
-Go to **Edit** > **Preferences** > **System** > **Network** and enable **Allow Online Access**.
+## Step 2 – Install Falling Leaves - Online Assets
 
-Go to **Edit** > **Preferences** > **Add-ons** > **Falling Leaves** and click **Download Asset Pack**. A progress counter shows the download status and Blender stays responsive.
+1. Download **falling_leaves_online_assets** from the [Releases](https://github.com/GuillaumeBissieres/blender-falling-leaves-extensions-compatible/releases) of this repository.
+2. Open Blender and go to **Edit > Preferences > Get Extensions**, click the arrow in the top-right corner, choose **Install from Disk** and select the ZIP file.
+3. Enable the **Falling Leaves - Online Assets** add-on.
 
-Access **Falling Leaves** in the **N menu** (sidebar) under the **Falling Leaves tab**.
+## Step 3 – Download the Assets
 
-If you use a full version that already includes the asset pack, the download step is not needed.
+1. Go to **Edit > Preferences > Add-ons > Falling Leaves - Online Assets**.
+2. Click **Download Online Assets**. A progress counter shows the download status and Blender stays responsive.
+3. Once the download is finished, the new assets appear in the Falling Leaves **Asset Panel**, after the bundled ones.
 
+###
+
+<img width="300" height="76" alt="Capture d&#39;écran 2026-11-22 014913" src="https://github.com/user-attachments/assets/36f06f7e-43c5-4962-a831-dfcb9008575d" />
+
+###
+
+New leaf assets are added over time: click **Update Online Assets** whenever you like, only new or changed files are downloaded.
+
+> **Important:** Due to Blender Extensions rules (extensions must be self-contained and cannot download content), **Falling Leaves** and **Falling Leaves - Online Assets** must be installed separately. For full functionality, install **Falling Leaves** first, then install **Falling Leaves - Online Assets** and download the assets.
+
+## Accessing the Add-ons
+
+- **Falling Leaves** can be accessed from the **Falling Leaves** tab in the **N Panel** (Sidebar) of the 3D Viewport.
+- **Falling Leaves - Online Assets** can be accessed from its add-on preferences, and from the **Online assets** section it adds to the Falling Leaves **Asset Panel**.
 
 # How to Use — Quick Start
 
 1. **Run Falling Leaves** : Creates an Emitter plane above the scene, a Leaf object, a Ground plane with Collision and a particle system (500 leaves by default) with Newtonian physics, Brownian motion, drag, damping and random rotation. Press play and the leaves fall.
-
-<!-- Screenshot: the scene right after clicking Run Falling Leaves -->
 
 2. **Delete Setup** : The trash icon next to the Run button removes the Emitter, Leaf and Ground objects in one click.
 
@@ -76,8 +85,6 @@ If you use a full version that already includes the asset pack, the download ste
 <img width="1894" height="998" alt="falling_leaves_6" src="https://github.com/user-attachments/assets/bb0e2ec3-bca6-4fc1-864a-4b63a72db0e0" />
 
 
-<!-- Screenshot: the main panel with the Run button and trash icon -->
-
 ###
 
 
@@ -89,22 +96,18 @@ If you use a full version that already includes the asset pack, the download ste
 
 ###
 
-<!-- Screenshot: Leaf Mesh panel -->
-
 ###
 
 
 # How to Use — Asset Panel
 
-Click an icon in the grid to append the matching ready-made leaf object into your scene. **Import Asset** opens Blender's append browser on the asset pack, so you can pick any object from it.
+Click an icon in the grid, then **Add to Scene** to append the matching ready-made leaf asset into your scene. **Capture Thumbnail** takes the thumbnail from the viewport and **Save Selection to Library** stores your own assets.
 
-If the pack is not installed yet, the panel shows a **Download Asset Pack** button.
+Below, the **Online assets** section shows how many asset packs are downloaded and the **Download / Update Online Assets** button. This section only appears once the Online Assets add-on is installed and enabled.
 
 ###
 
 <img width="432" height="275" alt="Capture d&#39;écran 2026-10-28 231211" src="https://github.com/user-attachments/assets/5413b8e4-2567-4e19-936c-8809d583cd99" />
-
-<!-- Screenshot: Asset Panel icon grid -->
 
 ###
 
@@ -133,8 +136,6 @@ Fine-tune the particle system without leaving the N panel:
 <img width="442" height="477" alt="Capture d&#39;écran 2026-10-28 234453" src="https://github.com/user-attachments/assets/db97228c-8d68-4495-90d3-ad0515c3aeb7" />
 
 
-<!-- Screenshot: Simulation Settings panel -->
-
 ###
 
 
@@ -154,8 +155,6 @@ Fine-tune the particle system without leaving the N panel:
 
 ###
 
-<!-- Screenshot: Wind & Forces panel -->
-
 ###
 
 # How to Use — Leaf Path
@@ -170,8 +169,6 @@ Fine-tune the particle system without leaving the N panel:
 <img width="1894" height="998" alt="falling_leaves_16" src="https://github.com/user-attachments/assets/59523fec-d0b4-4b83-a69f-735827947c64" />
 
 ###
-<!-- Screenshot: Leaf Path panel -->
-
 ###
 
 
@@ -196,16 +193,15 @@ Blow the leaves lying on your Geometry Nodes ground, like a gust sweeping them a
 
 
 ###
-<!-- Screenshot: Ground Wind panel -->
-
 
 # Advanced Options
 
-- **On-demand Asset Pack** : The heavy `.blend` and textures are not bundled in the add-on, which keeps the install small. Download them once from the preferences.
-- **Online Access Only on Click** : The add-on connects to the internet only when you press the download button, and only if **Allow Online Access** is enabled in Blender.
-- **Survives Updates** : The asset pack is stored in the extension's user folder, so updating the add-on does not remove it.
-- **Background Download** : The pack downloads in a separate thread with a progress counter — Blender never freezes.
-- **Safe Download** : Files are written to a temporary `.part` file and size-checked before being validated, so an interrupted download never leaves a corrupted pack.
+- **Self-contained Main Add-on** : Falling Leaves from Blender Extensions never connects to the internet — it only reads the assets stored on your disk.
+- **One-click Asset Download** : The extra assets are downloaded directly from the add-on preferences or the Asset Panel, without any terminal or manual file handling.
+- **Assets Added Over Time** : **Update Online Assets** fetches only new or changed files.
+- **Online Access Only on Click** : The Online Assets add-on connects to the internet only when you press the button, and only if **Allow Online Access** is enabled in Blender.
+- **Survives Updates** : The assets are stored in the Falling Leaves user folder, so updating either add-on does not remove them.
+- **Background Download** : The assets download in a separate thread with a progress counter — Blender never freezes.
+- **Safe Download** : Files are written to a temporary `.part` file and size-checked before being validated, so an interrupted download never leaves a corrupted asset.
 - **Copy & Share Settings** : Particle and wind settings can be exported to the clipboard and applied in another scene.
 - **Non-destructive Cleanup** : Delete Setup and Delete Wind only remove the objects created by the add-on.
-
