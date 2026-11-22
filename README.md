@@ -20,9 +20,11 @@ This add-on builds a complete falling-leaves scene in one click: an emitter, a l
 
 # Requirements
 
-**Falling Leaves** (Blender Extensions) is fully self-contained: OpenCV and 3 Geometry Nodes leaf assets are bundled, nothing else to install.
+**Falling Leaves** (Blender Extensions) is fully self-contained: OpenCV and 3 Geometry Nodes leaf assets are bundled, nothing else to install. Available for **Windows, macOS (Apple Silicon & Intel) and Linux**.
 
 **Falling Leaves - Online Assets** (this repository) downloads the extra leaf assets from the Hugging Face repository: [GBissieres/falling_leaves_assets](https://huggingface.co/datasets/GBissieres/falling_leaves_assets)
+
+Works on **Windows, macOS (Apple Silicon & Intel) and Linux** — one ZIP for all platforms.
 
 **The assets can be downloaded directly from the add-on preferences** — no terminal or manual download needed. Go to **Edit** > **Preferences** > **Add-ons** > **Falling Leaves - Online Assets** and click **Download Online Assets**. The full asset pack is approximately 127 MB — a stable internet connection is required.
 
@@ -45,7 +47,7 @@ This add-on builds a complete falling-leaves scene in one click: an emitter, a l
 
 ## Step 2 – Install Falling Leaves - Online Assets
 
-1. Download **falling_leaves_online_assets** from the [Releases](https://github.com/GuillaumeBissieres/blender-falling-leaves-extensions-compatible/releases) of this repository.
+1. Download **falling_leaves_online_assets** from the [Releases](https://github.com/GuillaumeBissieres/blender-falling-leaves-extensions-compatible/releases) of this repository. The same ZIP works on Windows, macOS and Linux.
 2. Open Blender and go to **Edit > Preferences > Get Extensions**, click the arrow in the top-right corner, choose **Install from Disk** and select the ZIP file.
 3. Enable the **Falling Leaves - Online Assets** add-on.
 
